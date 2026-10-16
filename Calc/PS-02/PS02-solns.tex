@@ -1,0 +1,161 @@
+\documentclass{article}
+\usepackage{../almeida}
+\everymath{\displaystyle}
+
+\begin{document}
+\flushleft
+Name:\ \makebox[3in]{\hrulefill} \hspace{1in} Date:\ \makebox[1in]{\hrulefill} 
+\begin{center}
+    \textbf{PS-02: $\epsilon-\delta$ Proofs, Part II \color{blue} Solutions \color{black}}
+
+\end{center}
+
+% A customized box with a title and colors
+\begin{center}
+\begin{tcolorbox}[colback=white, colframe=black, colbacktitle=white, coltitle=black, title=\textbf{Topics},boxrule=1pt,width=12cm]
+    \begin{itemize}
+        \item $\epsilon-\delta$ proofs of polynomial functions
+        \item $\epsilon-\delta$ proofs of rational functions
+    \end{itemize}
+\end{tcolorbox}
+\end{center}
+
+\begin{enumerate}
+  \item $\lim_{x \to -3} \left(x^2+4x+1\right) = -2$
+  \newline\color{blue}
+  Let $\epsilon>0$ and choose $\delta = \min\left({1, \frac{\epsilon}{3}}\right)$.
+  Then, if $0 < \left| x + 3 \right| < \delta$, it must be true that
+  \begin{align*}
+    \left| f(x) - L \right| &= \left| (x^2 + 4x + 1) - (-2) \right| \\
+    &= \left| x^2 + 4x + 3 \right| \\
+    &= \left| (x+3)(x+1) \right| \\
+    &= \underbrace{\left|x+3\right|}_{< \delta} \cdot \left|x+1\right|
+  \end{align*}
+
+  We can find an upper bound on $\left|x+3\right|$ as follows: If 
+  \begin{align*}
+    \left| x + 3 \right| < \delta \le 1 \implies -1 < x + 3 < 1 \implies 1 < x + 1 < 3 \implies \left| x + 1 \right| < 3
+  \end{align*}
+
+  Then, 
+  \[
+    \left| f(x) - L \right| = \ldots = \left|x+3\right| \cdot \left|x+1\right| 
+    < \delta \cdot 3 \leq \frac{\epsilon}{3} \cdot 3 = \epsilon \qed
+  \]
+  \color{black}
+  
+  % ======= Number 2 =======
+  \item $\lim_{x \to 2} \left( x^3 - 7x \right) = -6$
+  \newline\color{blue}
+  Let $\epsilon>0$ and choose $\delta = \min\left({1, \frac{\epsilon}{12}}\right)$.
+  Then, if $0 < \left| x - 2 \right| < \delta$, it must be true that
+  \begin{align*}
+    \left| f(x) - L \right| &= \left| (x^3 - 7x) - (-6) \right| \\
+    &= \left| x^3 - 7x + 6 \right| \\
+    &= \left| (x-2)(x+3)(x-1) \right| \\
+    &= \underbrace{\left|x-2\right|}_{< \delta} \cdot \left|x+3\right| \cdot \left|x-1\right|
+  \end{align*}
+
+  We can find an upper bound on the other two factors as follows: 
+  \begin{align*}
+    \left| x - 2 \right| < \delta \le \implies -1 < x - 2 < 1 \implies 4 < x + 3 < 6 \implies \left|x+3\right| < 6 \\
+    \left| x - 2 \right| < \delta \le \implies -1 < x - 2 < 1 \implies 0 < x - 1 < 2 \implies \left|x-1\right| < 2
+  \end{align*}
+
+  You can confirm the upper bounds with this Desmos calculator: \url{https://www.desmos.com/calculator/zyaxx5fihr}. \newline
+  
+  Without Desmos, note that the function $g(x)=(x+3)(x-1)$ is continuous, and so it attains a maximum on the closed interval $[1,3]$ (which is the interval of $x$ values that satisfy $\left|x-2\right|<1$). The maximum occurs at one of the endpoints, and so we can check $g(1)=4$ and $g(3)=12$, which confirms our upper bound of $12$.
+
+  Then, 
+  \[
+    \left| f(x) - L \right| = \ldots = \left|x-2\right| \cdot \left|x+3\right| \cdot \left|x-1\right| 
+    < \delta \cdot 6 \cdot 2 = 12 \, \delta = 12\cdot \frac{\epsilon}{12} = \epsilon \qed
+  \]
+  \color{black}
+
+  % ======= Number 3 =======
+  \item $\lim_{x \to 4} \left( \frac{x^2 - 16}{x-4} \right)= 8$
+  \newline\color{blue}
+  Let $\epsilon>0$ and choose $\delta = \epsilon$. Then, if $0 < \left| x-4 \right| < \delta$, it follows that
+  \begin{align*}
+    \left| f(x) - L \right| &= \left| \frac{x^2 - 16}{x-4} - 8 \right| \\
+    &= \left| (x+4)\cdot\underbrace{\frac{x-4}{x-4}}_{=1 \textrm{ since } |x-4|>0} - 8 \right| \\
+    &= \left| (x+4) - 8\right| \\
+    &= \left| x-4 \right| \\
+    &< \delta \\
+    &=\epsilon \qed
+  \end{align*}
+  
+  % ======= Number 4 =======
+  \item $\lim_{x \to -1} \left( \frac{x^{2}-7x+4}{x-3} \right)$
+  \newline\color{blue}
+  Let $\epsilon > 0$. Choose $\delta = \min\left\{1, \frac{3}{7}\epsilon\right\}$. Then, if $0 < |x + 1| < \delta$, we have
+  \begin{align*}
+    \left| f(x) - L \right| &= \left| \frac{x^2-7x+4}{x-3} + 3 \right| \\
+    &= \left| \frac{x^2-7x+4}{x-3} + \frac{3x-9}{x-3} \right|  \\
+    &= \left| \frac{x^2-4x-5}{x-3} \right| \\
+    &= \left| \frac{(x-5)(x+1)}{x-3} \right| \\
+    &= \underbrace{\left|x+1\right|}_{< \delta} \cdot \left| \frac{x-5}{x-3} \right| \\
+  \end{align*}
+
+  Thus, we'll need to bound the second factor, $\left| \frac{x-5}{x-3} \right| = \left|x-5\right|\cdot \frac{1}{\left|x-3\right|}$. 
+
+  \begin{enumerate}
+    \item $\left|x+1\right| < 1 \implies -1 < x + 1 < 1 \implies -7 < x-5 < -4 \implies \left|x-5\right| < 7$
+    \item $\left|x+1\right| < 1 \implies -1 < x + 1 < 1 \implies -5 < x-3 < -3 \implies -\frac{1}{3} < \frac{1}{x-3} < -\frac{1}{5} \implies \left|\frac{1}{x-3}\right| < \frac{1}{3}$
+  \end{enumerate}
+
+  and we have
+  \begin{equation*}
+    \left| \frac{x-5}{x-3} \right| = \left|x-5\right|\cdot \frac{1}{\left|x-3\right|} < 7 \cdot \frac{1}{3} = \frac{7}{3}
+  \end{equation*}
+  so that   
+  \begin{align*}
+    \left| f(x) - L \right| &= \ldots = \left|x+1\right| \cdot \left| \frac{x-5}{x-3} \right| < \delta \cdot \frac{7}{3} \leq \frac{3}{7}\epsilon \cdot \frac{7}{3} = \epsilon \qed
+  \end{align*}
+
+  Here's a different way to found the expression $\left|\frac{x-5}{x-3}\right|$ on the interval $\left(-2,0\right)$:
+  \begin{itemize}
+  \item $x-5 < 0$ on $\left(-2,0\right)$ \\
+  \item $x-3 < 0$ on $\left(-2,0\right)$ \\
+  \end{itemize}
+  Thus, $\left|\frac{x-5}{x-3}\right| = \frac{x-5}{x-3}$ on $\left(-2,0\right)$. Let $g(x) = \frac{x-5}{x-3} = 1 - \frac{2}{x-3}$ on $\left(-2,0\right)$ and check its monotonicity:
+  \begin{equation*}
+    g'(x) = \frac{d}{dx}\left(\frac{-2}{x-3}\right) = \frac{2}{(x-3)^2} > 0 \text{ for all }x \in \left(-2,0\right)
+  \end{equation*}
+  Therefore $g(x)$ is strictly inreasing on $\left(-2,0\right)$ and so the maximum occurs at $x=0$. Evaluating $g(0) = \frac{0-5}{0-3} = \frac{5}{3}$, we have $\left|\frac{x-5}{x-3}\right| \leq \frac{5}{3}$ on $\left(-2,0\right)$.
+\end{enumerate}
+Here's a \href{https://www.desmos.com/calculator/aizorrivt8}{Desmos Calculator}
+\end{document}
+
+
+
+\documentclass{article}
+\usepackage{../almeida}
+\everymath{\displaystyle}
+
+\begin{document}
+\flushleft
+Name:\ \makebox[3in]{\hrulefill} \hspace{1in} Date:\ \makebox[1in]{\hrulefill} 
+\begin{center}
+    \textbf{PS-02: $\epsilon-\delta$ Proofs, Part II}
+\end{center}
+
+% A customized box with a title and colors
+\begin{center}
+\begin{tcolorbox}[colback=white, colframe=black, colbacktitle=white, coltitle=black, title=\textbf{Topics},boxrule=1pt,width=12cm]
+    \begin{itemize}
+        \item $\epsilon-\delta$ proofs of polynomial functions
+        \item $\epsilon-\delta$ proofs of rational functions
+    \end{itemize}
+\end{tcolorbox}
+\end{center}
+
+\textbf{Directions:} Work independently with no references other than any personal notes (includes photos from any collaborative whiteboard sessions). This will be graded for correctness.
+\begin{enumerate}
+  \item $\lim_{x \to -3} \left(x^2+4x+1\right) = -2$
+  \item $\lim_{x \to 2} \left( x^3 - 7x \right) = -6$
+  \item $\lim_{x \to 4} \left( \frac{x^2 - 16}{x-4} \right)= 8$
+  \item $\lim_{x \to -1} \left( \frac{x^{2}-7x+4}{x-3} \right)$
+\end{enumerate}
+\end{document}
