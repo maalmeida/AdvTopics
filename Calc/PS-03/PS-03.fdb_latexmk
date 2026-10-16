@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1791590290.91494 "/Users/marcoalmeida/Documents/AdvTopics/Calc/PS-03/PS-03.tex" "PS-03.pdf" "PS-03" 1791590292.49576 2
+["pdflatex"] 1792190102.41523 "/Users/marcoalmeida/Documents/AdvTopics/Calc/PS-03/PS-03.tex" "PS-03.pdf" "PS-03" 1792190104.81721 0
   "../almeida.sty" 1790157827.77946 784 94781696dd7eb0984bbe31a403825771 ""
-  "/Users/marcoalmeida/Documents/AdvTopics/Calc/PS-03/PS-03.tex" 1791590289.00778 4360 354edf3647e51a1f40764916f48164c8 ""
+  "/Users/marcoalmeida/Documents/AdvTopics/Calc/PS-03/PS-03.tex" 1792190101.51084 4297 374bde21d4b7137176c45da1f3ec0898 ""
   "/Users/marcoalmeida/Library/texmf/tex/mystyle/almeida.sty" 1786505566.22362 463 67e7c41b3228edc57ba3c6110f93c1ba ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -244,9 +244,9 @@
   "/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1779670466 5573038 ad3e0d8c63dbec7957113a2386d66888 ""
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1779670540 3651076 5b69bc270588fe2e39287407e7bdc979 ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "PS-03.aux" 1791590292.34715 162 fa61bf9ecf9314f94d51aa32222a725c "pdflatex"
-  "PS-03.out" 1791590292.13896 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "PS-03.tex" 1791590289.00778 4360 354edf3647e51a1f40764916f48164c8 ""
+  "PS-03.aux" 1792190104.6667 162 fa61bf9ecf9314f94d51aa32222a725c "pdflatex"
+  "PS-03.out" 1792190104.29732 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "PS-03.tex" 1792190101.51084 4297 374bde21d4b7137176c45da1f3ec0898 ""
   (generated)
   "PS-03.aux"
   "PS-03.log"
