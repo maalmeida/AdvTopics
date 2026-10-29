@@ -1,0 +1,127 @@
+\documentclass{article}
+\usepackage{../almeida}
+\everymath{\displaystyle}
+
+\begin{document}
+\flushleft
+Name:\ \makebox[3in]{\hrulefill} \hspace{1in} Date:\ \makebox[1in]{\hrulefill} 
+\begin{center}
+    \textbf{PS-04: Integration Techniques - Substitutions}   
+\end{center}
+
+% A customized box with a title and colors
+\begin{center}
+\begin{tcolorbox}[colback=white, colframe=black, colbacktitle=white, coltitle=black, title=\textbf{Due: Wednesday, 2026 November 4},boxrule=1pt,width=12cm]
+    \begin{itemize}
+        \item Integration by Substitution
+    \end{itemize}
+\end{tcolorbox}
+\end{center}
+
+\textbf{Directions:} This will be graded for correct work and answers.
+
+Perform the indicated integrations. Provide exact numerical answers for relevant problems, not decimal approximations.
+\begin{enumerate}
+  \item $\int_0^1 \frac{6e^x}{2+3e^x} \, dx$
+  \item $\int_0^1 x\sqrt{1-x^2} \, dx$
+  \item $\int \frac{1}{x^2+4} \, dx$
+  \item $\int \frac{2x+1}{x^2+9} \, dx$
+  \item $\int \frac{2t^2}{2t^2+1} \, dt$
+  \item $\int \frac{4}{\sqrt{2t+1}} \, dt$
+  \item $\int \frac{x^3+7x}{x-1} \, dx$
+  \item $\int \frac{\sin\left[\ln(4x^2)\right]}{x} \, dx$
+  \item $\int \frac{\sec^2\left(\ln\left(x\right)\right)}{2x} \, dx$
+  \item $\int \frac{5e^x}{\sqrt{1-e^2x}} \, dx$
+  \item $\int \frac{x}{x^2+4} \, dx$
+\end{enumerate}
+\newpage
+\section*{Solution 1}
+\subsection*{Solution 1.1}
+\href{https://www.desmos.com/calculator/xb5irgigpt}{Desmos}
+Let $\epsilon > 0$ and choose $M = 1+\frac{1}{\epsilon} > 1$. Then, if $t > M$, we have
+\begin{align*}
+    \left| f(t) - L \right|     
+    &= \left| \frac{t^2}{t-t^2} - (-1) \right| \\
+    &= \left| \frac{t^2}{t-t^2} + 1 \right| \\
+    &= \left| \frac{t^2+(t-t^2)}{t-t^2} \right| \\
+    &= \left| \frac{t}{t(1-t)} \right| && \text{since }t > M \geq 0 \\
+    &= \frac{1}{\left|1-t\right|} \\
+    &= \frac{1}{\left|t-1\right|} \\
+    &= \frac{1}{t-1} && \text{since } t >M > 1 \\
+    &< \frac{1}{M-1} && \text{since } \frac{1}{x-1} \text{ is decreasing for } x > 1 \\
+    &= \frac{1}{(1+\frac{1}{\epsilon})-1} \\
+    &= \epsilon \quad \qed
+\end{align*}
+\subsection*{Solution 1.2}
+Let $\epsilon > 0$ and choose $M = \ldots$. Then, if $t > M$, we have
+\begin{align*}
+    \left| f(t) - L \right|     
+    &= \left| \frac{t^2}{t-t^2} - (-1) \right| \\
+    &= \left| \frac{t^2}{t-t^2} + 1 \right| \\
+    &= \left| \frac{t^2+(t-t^2)}{t-t^2} \right| \\
+    &= \left| \frac{t}{t(1-t)} \right| && \text{since }t > M \geq 0 \\
+    &= \frac{1}{\left|1-t\right|} \\
+    &= \frac{1}{\left|t-1\right|} \\
+    &= \frac{1}{t-1} && \text{since } t >M > 1 \\
+    &< \frac{1}{M-1} && \text{since } \frac{1}{x-1} \text{ is decreasing for } x > 1 \\
+    &= \frac{1}{(1+\frac{1}{\epsilon})-1} \\
+    &= \epsilon \quad \qed
+\end{align*}
+
+\section*{Solution 2}
+\subsection*{Solution 2.1}
+Let $\epsilon > 0$ and choose $M = \max\left(16,\frac{48}{\epsilon}\right)$. Then, if $x > M$, we have 
+\begin{align*}
+    \left| f(x) - L \right|
+    &=\left| \frac{3x^2}{x^2-8x+15} - 3 \right| \\
+    &= \left| \frac{3x^2 - 3(x^2-8x+15)}{x^2-8x+15} \right| \\
+    &= \left| \frac{24x - 45}{x^2-8x+15} \right| \\
+    &= \frac{ \left|24x-45\right| }{ \left|x^2-8x+15\right| }
+\end{align*}
+Considering the numerator and denominator separately, we have
+\[
+    \left|24x-45\right| > 0 \quad \text{if }x > 2
+\]
+and
+\[
+    \left|x^2-8x+15\right| = \left|(x-3)(x-5)\right| > 0\quad \text{if } x > 5
+\]
+Let's assume, then, that $M \geq 5$. Therefore,
+\begin{align*}
+    \left|f(x)-L\right| = \ldots &= \frac{ \left|24x-45\right| }{ \left|x^2-8x+15\right| } \\
+    &= \frac{24x-45}{x^2-8x+15} \\
+    &< \frac{24x}{x^2-8x+15}
+\end{align*}
+Let's bound the denominator:
+\[
+    x^2-8x+15 > \frac{1}{2}x^2 \iff \frac{1}{2}x^2 - 8x + 15 > 0
+\]
+To find the zeros of the above quadratic expression, use the quadratic formula:
+\[
+    x = \frac{16 \pm \sqrt{156 - 4(30)}}{2} = \frac{16\pm \sqrt{244}}{2} = \frac{16 \pm 2\sqrt{61}}{2} = 8\pm \sqrt{61}
+\]
+Now, the larger root is $8 + \sqrt{61} < 16$. Therefore, for $x > 16$, we have
+\[
+    x^2-8x+15 > \frac{1}{2}x^2
+\]
+Therefore, we'll assume $M \geq 16$ and can say
+\begin{align*}
+    \left|f(x)-L\right| = \ldots &= \frac{24x-45}{x^2-8x+15} \\
+    &< \frac{24x}{\frac{1}{2}x^2} \\ 
+    &= \frac{48}{x} \\
+    &= \frac{48}{48/\epsilon} \\
+    &= \epsilon \quad \qed
+\end{align*}
+\subsection*{Solution 2.2}
+\textbf{Setup: } 
+\begin{align*}
+    \left|\frac{3x^2}{x^2-8x+15} - 3 \right| = \ldots &=3\left|\frac{8x-15}{x^2-8x+15} \right|
+\end{align*}
+See the solution \href{https://drive.google.com/file/d/1Jr-4IQba3sL3lEX3WXa2Sx_bBObRx9gC/view?usp=drive_link}{here]}
+
+\begin{center} \rule{15cm}{1mm} \end{center}
+
+
+
+
+\end{document}
